@@ -4,9 +4,42 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=delete,done_all"
+		/>
+
 		<link rel="stylesheet" href="./style.css" />
 	</head>
 	<body>
+		<div class="container">
+			<div class="todo-top">
+				<input type="text" placeholder="wake up" class="todo-input" />
+				<input
+					type="time"
+					placeholder="enter the time"
+					class="todo-time-input"
+				/>
+				<button class="todo-btn">Add</button>
+			</div>
+			<ul class="todo-list"></ul>
+		</div>
+		<template class="todo-template">
+			<li class="todo-item">
+				<p class="todo-text"></p>
+				<p class="todo-time"></p>
+
+				<div class="div-button">
+					<button class="todo-delete">
+						<span class="material-symbols-outlined"> delete </span>
+					</button>
+					<button class="todo-complete">
+						<span class="material-symbols-outlined"> done_all </span>
+					</button>
+				</div>
+			</li></template
+		>
+
 		<script src="./script.js"></script>
 	</body>
 </html>

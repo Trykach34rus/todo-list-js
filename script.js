@@ -4,7 +4,7 @@ const todoTemplate = document.querySelector('.todo-template')
 const todoList = document.querySelector('.todo-list')
 const todoItemInput = document.querySelector('.todo-time-input')
 
-let todoArray = []
+let todoArray = getList()
 
 renderList(todoArray)
 function renderList(arr) {
@@ -27,6 +27,7 @@ function renderList(arr) {
 		completeBtn.onclick = () => completeTodo(item.id)
 		todoList.append(clone)
 	})
+	saveList()
 }
 
 function deleteTodo(id) {
@@ -49,5 +50,17 @@ function addTodo() {
 		time: time,
 	})
 	renderList(todoArray)
+}
+function saveList() {
+	const jsonArray = JSON.stringify(todoArray)
+	localStorage.setItem('todoArray', jsonArray)
+}
+function getList() {
+	const saveArray = localStorage.getItem('todoArray')
+	if (saveArray) {
+		return JSON.parse(saveArray)
+	} else {
+		return []
+	}
 }
 todoButton.onclick = addTodo
